@@ -229,11 +229,10 @@ ChooseMoveToLearn:
 	call FadeToMenu
 	farcall BlankScreen
 	call UpdateSprites
-	ld hl, .MenuDataHeader
+	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
 	ld [wMenuCursorPosition], a
-	ld a, 1
 	ld [wMenuScrollPosition], a
 	call ScrollingMenu
 	call SpeechTextbox
@@ -249,18 +248,16 @@ ChooseMoveToLearn:
 	scf
 	ret
 
-.MenuDataHeader: 
-	db $40 ; flags
-	db 01, 01 ; start coords
-	db 11, 19 ; end coords
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 1, SCREEN_WIDTH - 1, 11
 	dw .menuData
 	db 1 ; default option
 
-
 .menuData:
-	db $30 ; pointers
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; item format
 	db 5, 8 ; rows, columns
-	db 1 ; horizontal spacing
+	db SCROLLINGMENU_ITEMS_NORMAL ; horizontal spacing
 	dba  wd002
 	dba .PrintMoveName
 	dba .PrintDetails
@@ -280,9 +277,8 @@ ChooseMoveToLearn:
 	ld a, " "
 	call ByteFill
 	ld a, [wMenuSelection]
-	inc a
+	cp $ff
 	ret z
-	dec a
 	push de
 	dec a
 	ld bc, MOVE_LENGTH
@@ -290,15 +286,13 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld [wTempSpecies], a
+	ld [wd265], a
 	; get move type
-	;and $3f
+	and $3f
 	; 5 characters
 	ld c, a
 	add a
 	add a
-	add c
-	add c
 	add c
 	ld c, a
 	ld b, 0
@@ -306,16 +300,34 @@ ChooseMoveToLearn:
 	add hl, bc
 	ld d, h
 	ld e, l
-	ld hl, wStringBuffer1
-	ld bc, 7
-	call PlaceString
 
-	ld hl, wStringBuffer1 + 7
-	ld [hl], "P"
-	inc hl
-	ld [hl], "P"
-	inc hl
-	ld [hl], ":"
+	ld hl, wStringBuffer1
+	ld bc, 5
+	call PlaceString
+	ld hl, wStringBuffer1 + 4
+	ld [hl], "/"
+	; get move class
+	ld a, [wTempSpecies]
+	and $c0
+	rlca
+	rlca
+	ld c, a
+	add a
+	add a
+	add c
+	ld c, a
+	ld b, 0
+	ld hl, .Classes
+	add hl, bc
+	ld d, h
+	ld e, l
+
+	ld hl, wStringBuffer1 + 5
+	ld bc, 5
+	call PlaceString
+	ld hl, wStringBuffer1 + 9
+	ld [hl], "/"
+
 	ld a, [wMenuSelection]
 	dec a
 	ld bc, MOVE_LENGTH
@@ -323,9 +335,9 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld [wCurCoordEvent], a ;Changed from wEngineBuffer1
+	ld [wCurCoordEvent], a
 	ld hl, wStringBuffer1 + 10
-	ld de, wCurCoordEvent ;Changed from wEngineBuffer1
+	ld de, wCurCoordEvent
 	ld bc, $102
 	call PrintNum
 	ld hl, wStringBuffer1 + 12
@@ -341,33 +353,42 @@ ChooseMoveToLearn:
 	ret
 
 .Types
-	db "NORMAL@"
-	db "FIGHT@@"
-	db "FLYING@"
-	db "POISON@"
-	db "GROUND@"
-	db "ROCK@@@"
-	db "BIRD@@@"
-	db "BUG@@@@"
-	db "GHOST@@"
-	db "STEEL@@"
-	db "NORMAL@"
-	db "NORMAL@"
-	db "NORMAL@"
-	db "NORMAL@"
-	db "NORMAL@"
-	db "CURSE@@"
-	db "NORMAL@"
-	db "NORMAL@"
-	db "FIRE@@@"
-	db "WATER@@"
-	db "GRASS@@"
-	db "ELECTR@"
-	db "PSYCH@@"
-	db "ICE@@@@"
-	db "DRAGON@"
-	db "DARK@@@"
-	db "FAIRY@"
+	db "NORM@"
+	db "FIGH@"
+	db " FLY@"
+	db "POIS@"
+	db "GRND@"
+	db "ROCK@"
+	db "BIRD@"
+	db " BUG@"
+	db "GHST@"
+	db " STL@"
+
+	db "TP10@"
+	db "TP11@"
+	db "TP12@"
+	db "TP13@"
+	db "TP14@"
+	db "TP15@"
+	db "TP16@"
+	db "TP17@"
+	db "TP18@"
+	db "CRSE@"
+
+	db "FIRE@"
+	db "WATR@"
+	db "GRAS@"
+	db "ELEC@"
+	db "PSYC@"
+	db " ICE@"
+	db "DRGN@"
+	db "DARK@"
+	db " FRY@"
+.Classes
+	db "HOLD@"
+	db "PHYS@"
+	db "SPEC@"
+	db "STAT@"
 
 .PrintMoveDesc
 	push de
