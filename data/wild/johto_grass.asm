@@ -442,8 +442,8 @@ JohtoGrassWildMons:
 	db 6, ONIX
 	; nite
 	db 6, GEODUDE
-	db 6, RATTATA
-	db 5, WOOPER
+	db 6, WOOPER
+	db 5, ZUBAT
 	db 4, RATTATA
 	db 7, ZUBAT
 	db 6, ONIX
@@ -1351,7 +1351,7 @@ JohtoGrassWildMons:
 	; morn
 	db 6, RATTATA
 	db 6, SPEAROW
-	db 6, GEODUDE
+	db 6, NIDORAN_F
 	db 6, HOPPIP
 	db 7, EKANS
 	db 7, HOPPIP
@@ -1359,19 +1359,19 @@ JohtoGrassWildMons:
 	; day
 	db 6, RATTATA
 	db 6, SPEAROW
-	db 6, GEODUDE
+	db 6, NIDORAN_M
 	db 6, HOPPIP
 	db 7, EKANS
 	db 7, HOPPIP
 	db 7, HOPPIP
 	; nite
 	db 6, RATTATA
-	db 6, ZUBAT
-	db 6, GEODUDE
-	db 6, ZUBAT
+	db 6, NIDORAN_F
+	db 6, NIDORAN_M
+	db 6, EKANS
 	db 7, RATTATA
 	db 7, RATTATA
-	db 7, RATTATA
+	db 7, MURKROW
 	end_grass_wildmons
 
 	def_grass_wildmons ROUTE_34
