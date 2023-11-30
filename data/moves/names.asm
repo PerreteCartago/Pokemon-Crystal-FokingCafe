@@ -105,7 +105,7 @@ MoveNames::
 	li "Chirrido"
 	li "Doble equipo"
 	li "Recuperacion"
-	li "Harden"
+	li "Viento Plata"
 	li "Reduccion"
 	li "Pantallahumo"
 	li "Rayo Confuso"

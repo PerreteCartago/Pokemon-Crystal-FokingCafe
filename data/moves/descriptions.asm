@@ -106,7 +106,7 @@ MoveDescriptions::
 	dw ScreechDescription
 	dw DoubleTeamDescription
 	dw RecoverDescription
-	dw HardenDescription
+	dw SilverWindDescription
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
@@ -685,9 +685,9 @@ RecoverDescription:
 	db   "Restores HP by 1/2"
 	next "the max HP.@"
 
-HardenDescription:
-	db   "Raises the user's"
-	next "DEFENSE.@"
+SilverWindDescription:
+	db   "An attack that may"
+	next "raise all stats.@"
 
 MinimizeDescription:
 	db   "Heightens evasive-"

@@ -107,7 +107,7 @@ BattleAnimations::
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
-	dw BattleAnim_Harden
+	dw BattleAnim_SilverWind
 	dw BattleAnim_Minimize
 	dw BattleAnim_Smokescreen
 	dw BattleAnim_ConfuseRay
@@ -2693,12 +2693,29 @@ BattleAnim_LeechLife:
 	anim_wait 48
 	anim_ret
 
-BattleAnim_Harden:
-	anim_1gfx BATTLE_ANIM_GFX_REFLECT
-	anim_obp0 $0
-	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnimSub_Metallic
-	anim_call BattleAnim_ShowMon_0
+BattleAnim_SilverWind:
+	anim_2gfx BATTLE_ANIM_GFX_HAZE, BATTLE_ANIM_GFX_SPEED
+	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
+	anim_bgp $90
+	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
+	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
+	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 24, $10
+	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 48, $2
+	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 88, $8
+	anim_wait 4
+	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 56, $c
+	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 80, $4
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 80, 56, $1
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 64, $1
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 64, 32, $1
+	anim_wait 16
+	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 32, 72, $1
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Psywave:
