@@ -10,10 +10,10 @@ EvolutionMoves::
     db BUBBLEBEAM   ; WARTORTLE
     db SKULL_BASH   ; BLASTOISE
     db NO_MOVE      ; CATERPIE
-    db HARDEN       ; METAPOD
+    db DEFENSE_CURL ; METAPOD
     db CONFUSION    ; BUTTERFREE
     db NO_MOVE      ; WEEDLE
-    db HARDEN       ; KAKUNA
+    db DEFENSE_CURL ; KAKUNA
     db TWINEEDLE    ; BEEDRILL
     db NO_MOVE      ; PIDGEY
     db WHIRLWIND    ; PIDGEOTTO
