@@ -14,7 +14,8 @@ From other generation:
 -Fairy Type and moves Moonblast and play rough
 -Added a Reviver of Fossils
 -Sandstorm raises special atack
--Move reminder
+-Move reminder (Thanks to Thoth)
+- Added the move Silver Wind (thanks to SoupPotato/SourApple) and deleted the move Harden (All Pokemon who can learn harden in vanilla version now learn defense curl)
 
 
 Things I would like to add:
