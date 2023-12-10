@@ -114,6 +114,87 @@ KantoGrassWildMons:
 	db 15, GOLBAT
 	end_grass_wildmons
 
+	map_id CERULEAN_CAVE_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 46, MACHOKE
+	db 49, PARASECT
+	db 52, PRIMEAPE
+	db 49, MAGNETON
+	db 52, DITTO
+	db 58, ELECTRODE
+	db 55, WOBBUFFET
+	; day
+	db 46, MACHOKE
+	db 49, PARASECT
+	db 52, PRIMEAPE
+	db 49, MAGNETON
+	db 52, DITTO
+	db 58, ELECTRODE
+	db 55, WOBBUFFET
+	; nite
+	db 46, MACHOKE
+	db 49, PARASECT
+	db 52, PRIMEAPE
+	db 49, MAGNETON
+	db 52, DITTO
+	db 58, ELECTRODE
+	db 55, WOBBUFFET
+
+	map_id CERULEAN_CAVE_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 49, MACHOKE
+	db 52, PARASECT
+	db 55, KADABRA
+	db 52, MAGNETON
+	db 55, DITTO
+	db 61, ELECTRODE
+	db 58, WOBBUFFET
+	; day
+	db 49, MACHOKE
+	db 52, PARASECT
+	db 55, KADABRA
+	db 52, MAGNETON
+	db 55, DITTO
+	db 61, ELECTRODE
+	db 58, WOBBUFFET
+	; nite
+	db 49, MACHOKE
+	db 52, PARASECT
+	db 55, KADABRA
+	db 52, MAGNETON
+	db 55, DITTO
+	db 61, ELECTRODE
+	db 58, WOBBUFFET
+
+	map_id CERULEAN_CAVE_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 55, PARASECT
+	db 58, KADABRA
+	db 55, MAGNETON
+	db 52, MACHOKE
+	db 58, DITTO
+	db 64, ELECTRODE
+	db 61, WOBBUFFET
+	; day
+	db 55, PARASECT
+	db 58, KADABRA
+	db 55, MAGNETON
+	db 52, MACHOKE
+	db 58, DITTO
+	db 64, ELECTRODE
+	db 61, WOBBUFFET
+	; nite
+	db 55, PARASECT
+	db 58, KADABRA
+	db 55, MAGNETON
+	db 52, MACHOKE
+	db 58, DITTO
+	db 64, ELECTRODE
+	db 61, WOBBUFFET
+
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn

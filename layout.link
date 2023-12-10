@@ -44,7 +44,6 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
-	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
@@ -306,6 +305,8 @@ ROMX $77
 ROMX $78
 	"Debug Room"
 	"Tileset Data 8"
+ROMX $79
+	"Extra Songs 1"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c
