@@ -10,6 +10,7 @@ Press B to run.
 
 
 From other generation:
+Cerulean Cave (thanks to FrenchOrange for teaching me how to add blocks in Pokecrystal)
 -Psysical/Especial Split
 -Fairy Type and moves Moonblast and play rough
 -Added a Reviver of Fossils
@@ -19,5 +20,5 @@ From other generation:
 
 
 Things I would like to add:
-Event for Mewtwo, Articuno, Zapdos and Moltres.
+Event for Articuno, Zapdos and Moltres.
 Move Knock Off
