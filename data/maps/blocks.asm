@@ -316,6 +316,7 @@ Route14_Blocks:
 BetaSproutTower8_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTower8.blk"
 
+CinnabarMart_Blocks:
 OlivineMart_Blocks:
 EcruteakMart_Blocks:
 BlackthornMart_Blocks:
