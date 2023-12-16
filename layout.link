@@ -141,7 +141,6 @@ ROMX $32
 	"The End"
 ROMX $33
 	"Move Animations"
-	"Extra Songs 2"
 ROMX $34
 	"Pic Animations 1"
 ROMX $35
@@ -307,6 +306,7 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $79
 	"Extra Songs 1"
+	"Extra Songs 2"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c

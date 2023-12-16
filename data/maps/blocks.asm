@@ -115,9 +115,6 @@ Route12_Blocks:
 BetaGoldenrodCity_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaGoldenrodCity.blk"
 
-Route20_Blocks:
-	INCBIN "maps/Route20.blk"
-
 BetaSproutTower6_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTower6.blk"
 
@@ -1055,3 +1052,8 @@ CeruleanCave2F_Blocks:
 CeruleanCaveB1F_Blocks:
 	INCBIN "maps/CeruleanCaveB1F.blk"
 
+
+SECTION "Map Blocks 4", ROMX
+
+Route20_Blocks:
+	INCBIN "maps/Route20.blk"
