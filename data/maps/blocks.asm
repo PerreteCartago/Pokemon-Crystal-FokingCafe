@@ -1058,3 +1058,6 @@ SECTION "Map Blocks 4", ROMX
 
 Route20_Blocks:
 	INCBIN "maps/Route20.blk"
+
+SeafoamIslands_Blocks:
+	INCBIN "maps/SeafoamIslands.blk"

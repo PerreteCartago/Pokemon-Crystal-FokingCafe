@@ -1,5 +1,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
-	tilecoll WALL, WALL, WALL, WALL ; 01
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 02
 	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 03
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 04
@@ -123,6 +123,8 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 7a
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 7b
 	tilecoll WALL, WALL, WALL, WALL ; 7c
-	tilecoll WALL, WALL, WALL, WALL ; 7d
-	tilecoll WALL, WALL, WALL, WALL ; 7e
-	tilecoll WATER, WATER, WALL, WALL ; 7f
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 7d
+	tilecoll WALL, FLOOR, WALL, WALL ; 7e
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 7f
+	tilecoll FLOOR, PIT, FLOOR, FLOOR ; 80
+	tilecoll PIT, FLOOR, FLOOR, FLOOR ; 81
