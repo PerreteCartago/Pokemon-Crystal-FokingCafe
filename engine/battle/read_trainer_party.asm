@@ -120,7 +120,7 @@ ReadTrainerPartyPieces:
 	ld e, l
 	pop hl
 
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 .no_item
 
