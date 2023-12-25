@@ -1061,3 +1061,6 @@ Route20_Blocks:
 
 SeafoamIslands_Blocks:
 	INCBIN "maps/SeafoamIslands.blk"
+
+SeafoamIslandsB1F_Blocks:
+	INCBIN "maps/SeafoamIslandsB1F.blk"

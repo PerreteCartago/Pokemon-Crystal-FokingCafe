@@ -195,6 +195,7 @@ ENDM
 	map_const ROUTE_21,                                    10, 18 ;  8
 	map_const CINNABAR_ISLAND,                             10,  9 ;  9
 	map_const SEAFOAM_ISLANDS,                             15,  9 ; 10
+	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 10
 	endgroup
 
 	newgroup CERULEAN                                             ;  7

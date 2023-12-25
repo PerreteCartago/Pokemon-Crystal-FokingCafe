@@ -700,3 +700,4 @@ ENDM
 	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $09, 0
 	map_attributes SeafoamIslands, SEAFOAM_ISLANDS, $00, 0
 	map_attributes CinnabarMart, CINNABAR_MART, $00, 0
+	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $00, 0
