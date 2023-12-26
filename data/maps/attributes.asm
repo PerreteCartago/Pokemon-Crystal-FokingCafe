@@ -701,3 +701,6 @@ ENDM
 	map_attributes SeafoamIslands, SEAFOAM_ISLANDS, $00, 0
 	map_attributes CinnabarMart, CINNABAR_MART, $00, 0
 	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $00, 0
+	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $00, 0
+	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $00, 0
+	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $00, 0

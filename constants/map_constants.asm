@@ -157,6 +157,11 @@ ENDM
 	map_const CERULEAN_CAVE_1F,                            20, 14 ; 92
 	map_const CERULEAN_CAVE_2F,                            20, 14 ; 93
 	map_const CERULEAN_CAVE_B1F,                           20, 14 ; 94
+	map_const SEAFOAM_ISLANDS,                             15,  9 ; 95
+	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 96
+	map_const SEAFOAM_ISLANDS_B2F,                         15,  9 ; 97
+	map_const SEAFOAM_ISLANDS_B3F,                         17, 11 ; 98
+	map_const SEAFOAM_ISLANDS_B4F,                         15,  9 ; 99
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -194,8 +199,6 @@ ENDM
 	map_const ROUTE_20,                                    50,  9 ;  7
 	map_const ROUTE_21,                                    10, 18 ;  8
 	map_const CINNABAR_ISLAND,                             10,  9 ;  9
-	map_const SEAFOAM_ISLANDS,                             15,  9 ; 10
-	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 10
 	endgroup
 
 	newgroup CERULEAN                                             ;  7
