@@ -10,8 +10,8 @@ SeafoamIslandsB3F_MapEvents:
 
 	def_warp_events
 	warp_event 27,  3, SEAFOAM_ISLANDS_B2F, 4
-	warp_event  6, 14, SEAFOAM_ISLANDS_B2F, 5
-	warp_event 26, 16, SEAFOAM_ISLANDS_B2F, 7
+	warp_event  7, 14, SEAFOAM_ISLANDS_B2F, 5
+	warp_event 27, 16, SEAFOAM_ISLANDS_B2F, 7
 	warp_event 27,  6, SEAFOAM_ISLANDS_B4F, 1
 	warp_event 11,  9, SEAFOAM_ISLANDS_B4F, 2
 

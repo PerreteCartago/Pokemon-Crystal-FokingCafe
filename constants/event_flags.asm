@@ -269,7 +269,8 @@
 	const EVENT_TULLY_GAVE_WATER_STONE
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 	const EVENT_GOT_BULBA
-; Unused: next 339 events
+	const EVENT_FOUND_ULTRA_BALL_IN_SEAFOAM_ISLANDS_B4F
+; Unused: next 338 events
 
 	const_next 600
 ; Kurt Apricorn events

@@ -184,4 +184,18 @@ KantoWaterWildMons:
 	db 50, CLOYSTER
 	end_water_wildmons
 
+	def_water_wildmons SEAFOAM_ISLANDS_B3F
+	db 6 percent ; encounter rate
+	db 43, TENTACRUEL
+	db 43, STARMIE
+	db 43, SEEL
+	end_water_wildmons
+
+	def_water_wildmons SEAFOAM_ISLANDS_B4F
+	db 6 percent ; encounter rate
+	db 43, TENTACRUEL
+	db 43, STARMIE
+	db 43, DEWGONG
+	end_water_wildmons
+
 	db -1 ; end

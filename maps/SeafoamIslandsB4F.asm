@@ -33,6 +33,9 @@ SeafoamIslandsB4FArticuno:
 	reloadmapafterbattle
 	end
 
+SeafoamIslandsB4FUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_FOUND_ULTRA_BALL_IN_SEAFOAM_ISLANDS_B4F
+
 ArticunoText:
 	text "Artic!"
 	done
@@ -41,12 +44,13 @@ SeafoamIslandsB4F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 24,  4, SEAFOAM_ISLANDS_B3F, 4
+	warp_event 25,  4, SEAFOAM_ISLANDS_B3F, 4
 	warp_event 11,  7, SEAFOAM_ISLANDS_B3F, 5
 
 	def_coord_events
 
 	def_bg_events
+	bg_event 25, 17, BGEVENT_ITEM, SeafoamIslandsB4FUltraBall
 
 	def_object_events
 	object_event  7,  1, SPRITE_ARTICUNO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0,  SeafoamIslandsB4FArticuno, EVENT_ARTICUNO_APPEAR

@@ -195,6 +195,141 @@ KantoGrassWildMons:
 	db 64, ELECTRODE
 	db 61, WOBBUFFET
 
+	map_id SEAFOAM_ISLANDS
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KRABBY
+	db 40, GOLDUCK
+	; day
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KRABBY
+	db 40, SLOWBRO
+	; nite
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KRABBY
+	db 40, DEWGONG
+
+	map_id SEAFOAM_ISLANDS_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, GOLDUCK
+	; day
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, SLOWBRO
+	; nite
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, DEWGONG
+
+	map_id SEAFOAM_ISLANDS_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, GOLDUCK
+	; day
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, SLOWBRO
+	; nite
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, DEWGONG
+
+	map_id SEAFOAM_ISLANDS_B3F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, GOLDUCK
+	; day
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, SLOWBRO
+	; nite
+	db 40, SEEL
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, SHELLDER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, DEWGONG
+
+	map_id SEAFOAM_ISLANDS_B4F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, DEWGONG
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, CLOYSTER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, GOLDUCK
+	; day
+	db 40, DEWGONG
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, CLOYSTER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, SLOWKING
+	; nite
+	db 40, DEWGONG
+	db 40, GOLBAT
+	db 40, SLOWPOKE
+	db 40, CLOYSTER
+	db 40, PSYDUCK
+	db 40, KINGLER
+	db 40, DEWGONG
+
 	def_grass_wildmons VICTORY_ROAD
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
