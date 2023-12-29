@@ -139,6 +139,7 @@ CinnabarIsland_MapEvents:
 	warp_event 11, 11, CINNABAR_POKECENTER_1F, 1
 	warp_event 15, 11, CINNABAR_MART, 2
 	warp_event 18,  3, SEAFOAM_GYM, 1
+	warp_event  5,  3, POKEMON_MANSION_1F, 1
 
 	def_coord_events
 
@@ -150,4 +151,4 @@ CinnabarIsland_MapEvents:
 	bg_event 11,  1, BGEVENT_ITEM, CinnabarIslandHiddenRareCandy
 
 	def_object_events
-	object_event  6,  4, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR
+	object_event  7, 10, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CinnabarIslandBlue, EVENT_BLUE_IN_CINNABAR

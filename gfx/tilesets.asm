@@ -294,8 +294,6 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl::
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
-TilesetBetaWordRoomMeta::
-INCBIN "data/tilesets/beta_word_room_metatiles.bin"
 
 TilesetBetaWordRoomColl::
 TilesetHoOhWordRoomColl::
@@ -335,3 +333,6 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetBetaWordRoomMeta::
+INCBIN "data/tilesets/beta_word_room_metatiles.bin"

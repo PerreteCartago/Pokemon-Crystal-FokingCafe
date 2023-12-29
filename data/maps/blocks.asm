@@ -1073,3 +1073,6 @@ SeafoamIslandsB3F_Blocks:
 
 SeafoamIslandsB4F_Blocks:
 	INCBIN "maps/SeafoamIslandsB4F.blk"
+
+PokemonMansion1F_Blocks:
+	INCBIN "maps/PokemonMansion1F.blk"
