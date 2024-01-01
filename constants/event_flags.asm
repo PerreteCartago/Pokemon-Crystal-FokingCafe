@@ -270,7 +270,8 @@
 	const EVENT_TIFFANY_GAVE_PINK_BOW
 	const EVENT_GOT_BULBA
 	const EVENT_FOUND_ULTRA_BALL_IN_SEAFOAM_ISLANDS_B4F
-; Unused: next 338 events
+	const EVENT_MANSION_SWITCH_ON
+; Unused: next 337 events
 
 	const_next 600
 ; Kurt Apricorn events

@@ -705,3 +705,4 @@ ENDM
 	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $00, 0
 	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $00, 0
 	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $00, 0
+	map_attributes PokemonMansion2F, POKEMON_MANSION_2F, $00, 0
