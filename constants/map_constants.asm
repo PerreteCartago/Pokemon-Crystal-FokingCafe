@@ -200,7 +200,9 @@ ENDM
 	map_const ROUTE_21,                                    10, 18 ;  8
 	map_const CINNABAR_ISLAND,                             10,  9 ;  9
 	map_const POKEMON_MANSION_1F,                          15, 14 ; 10
-	map_const POKEMON_MANSION_2F,                          15, 14 ; 10
+	map_const POKEMON_MANSION_2F,                          15, 14 ; 11
+	map_const POKEMON_MANSION_3F,                          15,  9 ; 12
+	map_const POKEMON_MANSION_B1F,                         15, 14 ; 13
 	endgroup
 
 	newgroup CERULEAN                                             ;  7

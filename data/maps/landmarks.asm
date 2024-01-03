@@ -105,6 +105,7 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
+	landmark  52, 130, PokemonMansionName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK¯TOWN@"
@@ -151,8 +152,8 @@ LavRadioTowerName:   db "LAV¯RADIO TOWER@"
 SilphCoName:         db "SILPH CO.@" ; unreferenced
 SafariZoneName:      db "SAFARI ZONE@" ; unreferenced
 SeafoamIslandsName:  db "SEAFOAM¯ISLANDS@"
-PokemonMansionName:  db "#MON¯MANSION@" ; unreferenced
-CeruleanCaveName:    db "CERULEAN¯CAVE@" ; unreferenced
+PokemonMansionName:  db "POKEMON¯MANSION@"
+CeruleanCaveName:    db "CERULEAN¯CAVE@"
 Route1Name:          db "ROUTE 1@"
 Route2Name:          db "ROUTE 2@"
 Route3Name:          db "ROUTE 3@"
