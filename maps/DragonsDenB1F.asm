@@ -15,11 +15,6 @@ DragonsDenB1F_MapScripts:
 	scene_script DragonsDenB1FNoop2Scene, SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, .UnsetClairScene
-
-.UnsetClairScene:
-	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_NOOP
-	endcallback
 	callback MAPCALLBACK_NEWMAP, DragonsDenB1FCheckRivalCallback
 
 DragonsDenB1FNoop1Scene:
@@ -46,6 +41,7 @@ DragonsDenB1FCheckRivalCallback:
 	endcallback
 
 DragonsDenB1F_ClairScene:
+; BUG: Clair can give TM24 Dragonbreath twice (see docs/bugs_and_glitches.md)
 	appear DRAGONSDENB1F_CLAIR
 	opentext
 	writetext ClairText_Wait

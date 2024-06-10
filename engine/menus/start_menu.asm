@@ -29,7 +29,7 @@ StartMenu::
 	call .SetUpMenuItems
 	ld a, [wBattleMenuCursorPosition]
 	ld [wMenuCursorPosition], a
-	call .DrawMenuClockTextBox
+	call .DrawMenuAccount
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatusBox
 	call SafeUpdateSprites
@@ -49,7 +49,7 @@ StartMenu::
 .Select:
 	call .GetInput
 	jr c, .Exit
-	call ._DrawMenuClockTextBox
+	call ._DrawMenuAccount
 	ld a, [wMenuCursorPosition]
 	ld [wBattleMenuCursorPosition], a
 	call PlayClickSFX
@@ -96,12 +96,12 @@ StartMenu::
 ; Return carry on exit, and no-carry on selection.
 	xor a
 	ldh [hBGMapMode], a
-	call ._DrawMenuClockTextBox
+	call ._DrawMenuAccount
 	call SetUpMenu
 	ld a, $ff
 	ld [wMenuSelection], a
 .loop
-	call .PrintMenuClock
+	call .PrintMenuAccount
 	call GetScrollingMenuJoypad
 	ld a, [wMenuJoypad]
 	cp B_BUTTON
@@ -147,7 +147,7 @@ StartMenu::
 	call ClearBGPalettes
 	call Call_ExitMenu
 	call ReloadTilesetAndPalettes
-	call .DrawMenuClockTextBox
+	call .DrawMenuAccount
 	call DrawVariableLengthMenuBox
 	call .DrawBugContestStatus
 	call UpdateSprites
@@ -176,15 +176,15 @@ StartMenu::
 
 .Items:
 ; entries correspond to STARTMENUITEM_* constants
-	dw StartMenu_Pokedex,  .PokedexString,  .EmptyDesc
-	dw StartMenu_Pokemon,  .PartyString,    .EmptyDesc
-	dw StartMenu_Pack,     .PackString,     .EmptyDesc
-	dw StartMenu_Status,   .StatusString,   .EmptyDesc
-	dw StartMenu_Save,     .SaveString,     .EmptyDesc
-	dw StartMenu_Option,   .OptionString,   .EmptyDesc
-	dw StartMenu_Exit,     .ExitString,     .EmptyDesc
-	dw StartMenu_Pokegear, .PokegearString, .EmptyDesc
-	dw StartMenu_Quit,     .QuitString,     .EmptyDesc
+	dw StartMenu_Pokedex,  .PokedexString,  .PokedexDesc
+	dw StartMenu_Pokemon,  .PartyString,    .PartyDesc
+	dw StartMenu_Pack,     .PackString,     .PackDesc
+	dw StartMenu_Status,   .StatusString,   .StatusDesc
+	dw StartMenu_Save,     .SaveString,     .SaveDesc
+	dw StartMenu_Option,   .OptionString,   .OptionDesc
+	dw StartMenu_Exit,     .ExitString,     .ExitDesc
+	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
+	dw StartMenu_Quit,     .QuitString,     .QuitDesc
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
@@ -196,12 +196,45 @@ StartMenu::
 .PokegearString: db "<POKE>GEAR@"
 .QuitString:     db "QUIT@"
 
-.EmptyDesc:
-	db   "@"
+.PokedexDesc:
+	db   "#MON"
+	next "database@"
+
+.PartyDesc:
+	db   "Party <PKMN>"
+	next "status@"
+
+.PackDesc:
+	db   "Contains"
+	next "items@"
+
+.PokegearDesc:
+	db   "Trainer's"
+	next "key device@"
+
+.StatusDesc:
+	db   "Your own"
+	next "status@"
+
+.SaveDesc:
+	db   "Save your"
+	next "progress@"
+
+.OptionDesc:
+	db   "Change"
+	next "settings@"
+
+.ExitDesc:
+	db   "Close this"
+	next "menu@"
+
+.QuitDesc:
+	db   "Quit and"
+	next "be judged.@"
 
 .OpenMenu:
 	ld a, [wMenuSelection]
-	call .GetMenuEmptyTextPointer
+	call .GetMenuAccountTextPointer
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -210,7 +243,7 @@ StartMenu::
 .MenuString:
 	push de
 	ld a, [wMenuSelection]
-	call .GetMenuEmptyTextPointer
+	call .GetMenuAccountTextPointer
 	inc hl
 	inc hl
 	ld a, [hli]
@@ -220,22 +253,26 @@ StartMenu::
 	call PlaceString
 	ret
 
-.MenuClockText:
-    push bc
-    push de
-    push hl
-    ldh a, [hHours]
-    ld b, a
-    ldh a, [hMinutes]
-    ld c, a
-    decoord 1, 16
-    farcall PrintHoursMins
-    pop hl
-    pop de
-    pop bc
-    ret
+.MenuDesc:
+	push de
+	ld a, [wMenuSelection]
+	cp $ff
+	jr z, .none
+	call .GetMenuAccountTextPointer
+rept 4
+	inc hl
+endr
+	ld a, [hli]
+	ld d, [hl]
+	ld e, a
+	pop hl
+	call PlaceString
+	ret
+.none
+	pop de
+	ret
 
-.GetMenuEmptyTextPointer:
+.GetMenuAccountTextPointer:
 	ld e, a
 	ld d, 0
 	ld hl, wMenuDataPointerTableAddr
@@ -323,25 +360,30 @@ endr
 	inc c
 	ret
 
-.DrawMenuClockTextBox:
-	jp ._DrawMenuClockTextBox
+.DrawMenuAccount:
+	jp ._DrawMenuAccount
 
-.PrintMenuClock:
-	call .IsMenuClockOn
+.PrintMenuAccount:
+	call .IsMenuAccountOn
 	ret z
-	call ._DrawMenuClockTextBox
-	jp .MenuClockText
+	call ._DrawMenuAccount
+	decoord 0, 14
+	jp .MenuDesc
 
-._DrawMenuClockTextBox:
-	call .IsMenuClockOn
+._DrawMenuAccount:
+	call .IsMenuAccountOn
 	ret z
-	hlcoord 0, 15
-	lb bc, 1, 8
-	jp Textbox
+	hlcoord 0, 13
+	lb bc, 5, 10
+	call ClearBox
+	hlcoord 0, 13
+	ld b, 3
+	ld c, 8
+	jp TextboxPalette
 
-.IsMenuClockOn:
+.IsMenuAccountOn:
 	ld a, [wOptions2]
-	and 1 << MENU_CLOCK
+	and 1 << MENU_ACCOUNT
 	ret
 
 .DrawBugContestStatusBox:

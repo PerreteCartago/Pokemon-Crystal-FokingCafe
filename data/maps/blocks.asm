@@ -115,6 +115,9 @@ Route12_Blocks:
 BetaGoldenrodCity_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaGoldenrodCity.blk"
 
+Route20_Blocks:
+	INCBIN "maps/Route20.blk"
+
 BetaSproutTower6_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTower6.blk"
 
@@ -316,7 +319,6 @@ Route14_Blocks:
 BetaSproutTower8_Blocks: ; unreferenced
 	INCBIN "maps/unused/BetaSproutTower8.blk"
 
-CinnabarMart_Blocks:
 OlivineMart_Blocks:
 EcruteakMart_Blocks:
 BlackthornMart_Blocks:
@@ -1043,45 +1045,3 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
-
-CeruleanCave1F_Blocks:
-	INCBIN "maps/CeruleanCave1F.blk"
-
-CeruleanCave2F_Blocks:
-	INCBIN "maps/CeruleanCave2F.blk"
-
-CeruleanCaveB1F_Blocks:
-	INCBIN "maps/CeruleanCaveB1F.blk"
-
-
-SECTION "Map Blocks 4", ROMX
-
-Route20_Blocks:
-	INCBIN "maps/Route20.blk"
-
-SeafoamIslands_Blocks:
-	INCBIN "maps/SeafoamIslands.blk"
-
-SeafoamIslandsB1F_Blocks:
-	INCBIN "maps/SeafoamIslandsB1F.blk"
-
-SeafoamIslandsB2F_Blocks:
-	INCBIN "maps/SeafoamIslandsB2F.blk"
-
-SeafoamIslandsB3F_Blocks:
-	INCBIN "maps/SeafoamIslandsB3F.blk"
-
-SeafoamIslandsB4F_Blocks:
-	INCBIN "maps/SeafoamIslandsB4F.blk"
-
-PokemonMansion1F_Blocks:
-	INCBIN "maps/PokemonMansion1F.blk"
-
-PokemonMansion2F_Blocks:
-	INCBIN "maps/PokemonMansion2F.blk"
-
-PokemonMansion3F_Blocks:
-	INCBIN "maps/PokemonMansion3F.blk"
-
-PokemonMansionB1F_Blocks:
-	INCBIN "maps/PokemonMansionB1F.blk"

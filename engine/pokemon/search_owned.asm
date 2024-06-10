@@ -56,16 +56,7 @@ CheckOwnMonAnywhere:
 	and a
 	ret z
 
-	ld hl, wBreedMon1Species
-	ld bc, wBreedMon1OT
-	call CheckOwnMon
-	ret c ; found!
-
-	ld hl, wBreedMon2Species
-	ld bc, wBreedMon2OT
-	call CheckOwnMon
-	ret c ; found!
-
+; BUG: CheckOwnMon does not check the Day-Care (see docs/bugs_and_glitches.md)
 	ld d, a
 	ld e, 0
 	ld hl, wPartyMon1Species
@@ -231,7 +222,8 @@ CheckOwnMon:
 
 	ld hl, wPlayerName
 
-rept PLAYER_NAME_LENGTH - 2
+; BUG: CheckOwnMon only checks the first five letters of OT names (see docs/bugs_and_glitches.md)
+rept NAME_LENGTH_JAPANESE - 2
 	ld a, [de]
 	cp [hl]
 	jr nz, .notfound

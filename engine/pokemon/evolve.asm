@@ -87,9 +87,6 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
 
-	cp EVOLVE_HELD
-	jp z, .held
-
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
 	cp [hl]
@@ -116,7 +113,7 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_2
 
 	inc hl
-	jp .proceed
+	jr .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -183,20 +180,6 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, .dont_evolve_3
 	jr .proceed
-
-.held
-	push hl
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Item
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	ld a, [hl]
-	ld b, a
-	pop hl
-	ld a, [hli]
-	cp b
-	jp nz, .dont_evolve_2
-	jp .proceed
 
 .level
 	ld a, [hli]
@@ -314,7 +297,6 @@ EvolveAfterBattle_MasterLoop:
 	xor a
 	ld [wMonType], a
 	call LearnLevelMoves
-	call LearnEvolutionMove
 	ld a, [wTempSpecies]
 	dec a
 	call SetSeenAndCaughtMon
@@ -360,46 +342,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wMonTriedToEvolve]
 	and a
 	call nz, RestartMapMusic
-	ret
-
-LearnEvolutionMove:
-	ld a, [wTempSpecies]
-	ld [wCurPartySpecies], a
-	dec a
-	ld c, a
-	ld b, 0
-	ld hl, EvolutionMoves
-	add hl, bc
-	ld a, [hl]
-	and a
-	ret z
-
-	push hl
-	ld d, a
-	ld hl, wPartyMon1Moves
-	ld a, [wCurPartyMon]
-	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-
-	ld b, NUM_MOVES
-.check_move
-	ld a, [hli]
-	cp d
-	jr z, .has_move
-	dec b
-	jr nz, .check_move
-
-	ld a, d
-	ld [wPutativeTMHMMove], a
-	ld [wNamedObjectIndex], a
-	call GetMoveName
-	call CopyName1
-	predef LearnMove
-	ld a, [wCurPartySpecies]
-	ld [wTempSpecies], a
-
-.has_move
-	pop hl
 	ret
 
 UpdateSpeciesNameIfNotNicknamed:
@@ -678,14 +620,10 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	cp EVOLVE_HELD
-	jr z, .held_param
 	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
 	jr nz, .not_tyrogue
 	inc hl
 
-.held_param
-	inc hl
 .not_tyrogue
 	inc hl
 	ld a, [wCurPartySpecies]

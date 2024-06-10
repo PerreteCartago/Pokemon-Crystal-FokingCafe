@@ -879,35 +879,23 @@ RetrieveBreedmon:
 	ld a, TRUE
 	ld [wSkipMovesBeforeLevelUp], a
 	predef FillMoves
+; BUG: Pokémon deposited in the Day-Care might lose experience (see docs/bugs_and_glitches.md)
 	ld a, [wPartyCount]
 	dec a
 	ld [wCurPartyMon], a
 	farcall HealPartyMon
-	ld d, MAX_LEVEL
+	ld a, [wCurPartyLevel]
+	ld d, a
 	callfar CalcExpAtLevel
 	pop bc
-	ld hl, MON_EXP + 2
+	ld hl, MON_EXP
 	add hl, bc
 	ldh a, [hMultiplicand]
-	ld b, a
+	ld [hli], a
 	ldh a, [hMultiplicand + 1]
-	ld c, a
+	ld [hli], a
 	ldh a, [hMultiplicand + 2]
-	ld d, a
-	ld a, [hld]
-	sub d
-	ld a, [hld]
-	sbc c
-	ld a, [hl]
-	sbc b
-	jr c, .not_max_exp
-	ld a, b
-	ld [hli], a
-	ld a, c
-	ld [hli], a
-	ld a, d
 	ld [hl], a
-.not_max_exp
 	and a
 	ret
 

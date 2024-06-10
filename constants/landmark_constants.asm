@@ -58,7 +58,6 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_MT_MOON           ; 35
 	const LANDMARK_ROUTE_4           ; 36
 	const LANDMARK_CERULEAN_CITY     ; 37
-	const CERULEAN_CAVE
 	const LANDMARK_ROUTE_24          ; 38
 	const LANDMARK_ROUTE_25          ; 39
 	const LANDMARK_ROUTE_5           ; 3a
@@ -99,7 +98,6 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_FAST_SHIP         ; 5f
-	const LANDMARK_#MON_MANSION      ; 60
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData

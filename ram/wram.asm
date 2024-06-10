@@ -739,12 +739,14 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
+if DEF(_CRYSTAL11)
 wPokedexStatus:: db
-wPokedexShinyToggle::
-; bit 0: set if displaying shiny palettes
-	db
+wPokedexDataEnd::
+else
 wPokedexDataEnd::
 	ds 1
+endc
+	ds 2
 
 NEXTU
 ; pokegear
@@ -1531,7 +1533,14 @@ wCreditsLYOverride:: db
 NEXTU
 ; pokedex
 wPrevDexEntryJumptableIndex:: db
+if DEF(_CRYSTAL11)
 wPrevDexEntryBackup:: db
+else
+; BUG: Crystal 1.0 reused the same byte in WRAM for
+; wPokedexStatus and wPrevDexEntryBackup.
+wPokedexStatus::
+wPrevDexEntryBackup:: db
+endc
 wUnusedPokedexByte:: db
 
 NEXTU
@@ -1802,7 +1811,7 @@ wGBPrinterBrightness::
 ;   darkest:  $7F
 	db
 wOptions2::
-; bit 1: menu clock off/on
+; bit 1: menu account off/on
 	db
 	ds 2
 wOptionsEnd::
@@ -2251,7 +2260,7 @@ wStringBuffer5:: ds STRING_BUFFER_LENGTH
 
 wBattleMenuCursorPosition:: db
 
-wBuffer1:: db
+	ds 1
 
 wCurBattleMon::
 ; index of the player's mon currently in battle (0-5)
@@ -2368,7 +2377,7 @@ wSpriteFlags:: db
 
 wHandlePlayerStep:: db
 
-wCurIconMonHasItemOrMail:: db
+	ds 1
 
 wPartyMenuActionText:: db
 
@@ -2932,11 +2941,11 @@ endr
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 6
+	ds 40
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
-; wMap1Object - wMap17Object
+; wMap1Object - wMap15Object
 for n, 1, NUM_OBJECTS
 wMap{d:n}Object:: map_object wMap{d:n}
 endr
@@ -3255,7 +3264,7 @@ wPhoneList:: ds CONTACT_LIST_SIZE + 1
 	ds 22
 
 wLuckyNumberShowFlag:: db
-wRepelType:: db
+	ds 1
 wLuckyIDNumber:: dw
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active

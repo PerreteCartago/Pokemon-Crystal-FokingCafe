@@ -174,7 +174,7 @@ FarmerFText_HealedMiltank:
 
 Text_ReceivedTM13: ; unreferenced
 	text "<PLAYER> received"
-	line "TM13 SNORE."
+	line "TM13."
 	done
 
 FarmerFText_SnoreSpeech:

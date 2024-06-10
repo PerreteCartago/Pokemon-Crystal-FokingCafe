@@ -107,7 +107,7 @@ BattleAnimations::
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
-	dw BattleAnim_SilverWind
+	dw BattleAnim_Harden
 	dw BattleAnim_Minimize
 	dw BattleAnim_Smokescreen
 	dw BattleAnim_ConfuseRay
@@ -255,8 +255,8 @@ BattleAnimations::
 	dw BattleAnim_BeatUp
 	dw BattleAnim_Moonblast
 	dw BattleAnim_PlayRough
-	dw BattleAnim_Hail
 	assert_table_length NUM_ATTACKS + 1
+	dw BattleAnim_Dummy
 	dw BattleAnim_SweetScent2
 	assert_table_length $100
 ; $100
@@ -282,9 +282,9 @@ BattleAnimations::
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
-	dw BattleAnim_InHail
 	assert_table_length NUM_BATTLE_ANIMS + 1
 
+BattleAnim_Dummy:
 BattleAnim_MirrorMove:
 	anim_ret
 
@@ -650,7 +650,6 @@ BattleAnim_Shake:
 	anim_wait 40
 	anim_ret
 
-BattleAnim_Dummy:
 BattleAnim_Pound:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_POUND
@@ -2694,29 +2693,12 @@ BattleAnim_LeechLife:
 	anim_wait 48
 	anim_ret
 
-BattleAnim_SilverWind:
-	anim_2gfx BATTLE_ANIM_GFX_HAZE, BATTLE_ANIM_GFX_SPEED
-	anim_sound 0, 1, SFX_GAME_FREAK_LOGO_GS
-	anim_bgp $90
-	anim_bgeffect BATTLE_BG_EFFECT_CYCLE_OBPALS_GRAY_AND_YELLOW, $0, $2, $0
-	anim_setobjpal PAL_BATTLE_OB_YELLOW, PAL_BTLCUSTOM_GRAY
-	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 24, $10
-	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 48, $2
-	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 88, $8
-	anim_wait 4
-	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 56, $c
-	anim_obj BATTLE_ANIM_OBJ_MIST_BALL_BG, 8, 80, $4
-	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 96, 80, $1
-	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 80, 56, $1
-	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 48, 64, $1
-	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 64, 32, $1
-	anim_wait 16
-	anim_obj BATTLE_ANIM_OBJ_WIND_SPARKLE, 32, 72, $1
-	anim_wait 32
+BattleAnim_Harden:
+	anim_1gfx BATTLE_ANIM_GFX_REFLECT
+	anim_obp0 $0
+	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnimSub_Metallic
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_Psywave:
@@ -4613,22 +4595,6 @@ BattleAnim_BeatUp:
 	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 48, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
-BattleAnim_Hail:
-BattleAnim_InHail:
-	anim_1gfx BATTLE_ANIM_GFX_ICE
-	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
-	anim_obj ANIM_OBJ_HAIL, 88, 0, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_HAIL, 72, 0, $1
-	anim_wait 8
-	anim_obj ANIM_OBJ_HAIL, 56, 0, $2
-.loop
-	anim_sound 0, 1, SFX_SHINE
-	anim_wait 8
-	anim_loop 8, .loop
-	anim_wait 8
 	anim_ret
 
 BattleAnimSub_Drain:

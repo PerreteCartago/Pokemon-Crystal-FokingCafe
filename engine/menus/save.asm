@@ -10,7 +10,7 @@ SaveMenu:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	call ExitMenu
 	and a
@@ -46,6 +46,7 @@ ChangeBoxSaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
+	call SavingDontTurnOffThePower
 	call SaveBox
 	pop de
 	ld a, e
@@ -63,7 +64,7 @@ Link_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	and a
 
@@ -108,7 +109,10 @@ MoveMonWOMail_InsertMon_SaveGame:
 	call LoadBox
 	call ResumeGameLogic
 	ld de, SFX_SAVE
-	jp PlaySFX
+	call PlaySFX
+	ld c, 24
+	call DelayFrames
+	ret
 
 StartMoveMonWOMail_SaveGame:
 	ld hl, MoveMonWOMailSaveText
@@ -119,7 +123,7 @@ StartMoveMonWOMail_SaveGame:
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
-	call SavedTheGame
+	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
 	and a
 	ret
@@ -170,18 +174,31 @@ AddHallOfFameEntry:
 		"GS_BALL_AVAILABLE is no longer equal to $b."
 	ret
 
+SaveGameData:
+	call _SaveGameData
+	ret
+
 AskOverwriteSaveFile:
 	ld a, [wSaveFileExists]
 	and a
 	jr z, .erase
 	call CompareLoadedAndSavedPlayerID
-	ret z ; pretend the player answered "Yes", but without asking
+	jr z, .yoursavefile
 	ld hl, AnotherSaveFileText
 	call SaveTheGame_yesorno
 	jr nz, .refused
+	jr .erase
+
+.yoursavefile
+	ld hl, AlreadyASaveFileText
+	call SaveTheGame_yesorno
+	jr nz, .refused
+	jr .ok
 
 .erase
 	call ErasePreviousSave
+
+.ok
 	and a
 	ret
 
@@ -219,20 +236,18 @@ CompareLoadedAndSavedPlayerID:
 	cp c
 	ret
 
+_SavingDontTurnOffThePower:
+	call SavingDontTurnOffThePower
 SavedTheGame:
-	ld hl, wOptions
-	set NO_TEXT_SCROLL, [hl]
-	push hl
-	ld hl, .saving_text
-	call PrintText
-	pop hl
-	res NO_TEXT_SCROLL, [hl]
-	call SaveGameData
+	call _SaveGameData
+	; wait 32 frames
+	ld c, 32
+	call DelayFrames
 	; copy the original text speed setting to the stack
 	ld a, [wOptions]
 	push af
-	; set text speed to fast
-	ld a, TEXT_DELAY_FAST
+	; set text speed to medium
+	ld a, TEXT_DELAY_MED
 	ld [wOptions], a
 	; <PLAYER> saved the game!
 	ld hl, SavedTheGameText
@@ -242,13 +257,13 @@ SavedTheGame:
 	ld [wOptions], a
 	ld de, SFX_SAVE
 	call WaitPlaySFX
-	jp WaitSFX
+	call WaitSFX
+	; wait 30 frames
+	ld c, 30
+	call DelayFrames
+	ret
 
-.saving_text
-	text "SAVING…"
-	done
-
-SaveGameData:
+_SaveGameData:
 	ld a, TRUE
 	ld [wSaveFileExists], a
 	farcall StageRTCTimeForSave
@@ -332,6 +347,7 @@ SavingDontTurnOffThePower:
 	ld a, TEXT_DELAY_MED
 	ld [wOptions], a
 	; SAVING... DON'T TURN OFF THE POWER.
+	ld hl, SavingDontTurnOffThePowerText
 	call PrintText
 	; Restore the text speed setting
 	pop af
@@ -1087,8 +1103,16 @@ WouldYouLikeToSaveTheGameText:
 	text_far _WouldYouLikeToSaveTheGameText
 	text_end
 
+SavingDontTurnOffThePowerText:
+	text_far _SavingDontTurnOffThePowerText
+	text_end
+
 SavedTheGameText:
 	text_far _SavedTheGameText
+	text_end
+
+AlreadyASaveFileText:
+	text_far _AlreadyASaveFileText
 	text_end
 
 AnotherSaveFileText:

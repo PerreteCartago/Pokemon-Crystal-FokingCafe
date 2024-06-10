@@ -118,7 +118,6 @@ INCLUDE "audio/music/lookhiker.asm"
 
 INCLUDE "audio/music/lookrocket.asm"
 INCLUDE "audio/music/rockettheme.asm"
-INCLUDE "audio/music/PokemonMansion.asm"
 assert BANK(Music_LookRocket) == BANK(Music_RocketTheme)
 
 INCLUDE "audio/music/mainmenu.asm"

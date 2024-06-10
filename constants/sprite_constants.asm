@@ -104,9 +104,6 @@
 	const SPRITE_RAIKOU ; 65
 	const SPRITE_CHRIS_RUN ; 66
 	const SPRITE_KRIS_RUN ; 67
-	const SPRITE_OFFICERJENNY
-	const SPRITE_CHRIS_SURF
-	const SPRITE_KRIS_SURF
 DEF NUM_OVERWORLD_SPRITES EQU const_value - 1
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
@@ -147,8 +144,6 @@ DEF SPRITE_POKEMON EQU const_value
 	const SPRITE_GYARADOS ; a0
 	const SPRITE_LUGIA ; a1
 	const SPRITE_HO_OH ; a2
-	const SPRITE_MEWTWO
-	const SPRITE_ARTICUNO
 DEF NUM_POKEMON_SPRITES EQU const_value - SPRITE_POKEMON
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)

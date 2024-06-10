@@ -342,6 +342,7 @@ AddSpriteGFX:
 	ret
 
 LoadSpriteGFX:
+
 	ld hl, wUsedSprites
 	ld b, SPRITE_GFX_LIST_CAPACITY
 .loop
