@@ -61,6 +61,9 @@ Pokedex:
 	ld a, [wCurDexMode]
 	ld [wLastDexMode], a
 
+	xor a
+	ld [wPokedexShinyToggle], a
+
 	pop af
 	ldh [hInMenu], a
 	pop af
@@ -360,6 +363,9 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [hl]
 	and A_BUTTON
 	jr nz, .do_menu_action
+	ld a, [hl]
+	and SELECT
+	jr nz, .toggle_shininess
 	call Pokedex_NextOrPreviousDexEntry
 	ret nc
 	call Pokedex_IncrementDexPointer
@@ -383,6 +389,15 @@ Pokedex_UpdateDexEntryScreen:
 	ld a, [wPrevDexEntryJumptableIndex]
 	ld [wJumptableIndex], a
 	ret
+
+.toggle_shininess
+; toggle the current shininess setting
+	ld a, [wPokedexShinyToggle]
+	xor 1
+	ld [wPokedexShinyToggle], a
+	; refresh palettes
+	ld a, SCGB_POKEDEX
+	jp Pokedex_GetSGBLayout
 
 Pokedex_Page:
 	ld a, [wPokedexStatus]
@@ -465,13 +480,8 @@ DexEntryScreen_MenuActionJumptable:
 	ret
 
 .Cry:
-; BUG: Playing Entei's Pokédex cry can distort Raikou's and Suicune's (see docs/bugs_and_glitches.md)
-	call Pokedex_GetSelectedMon
-	ld a, [wTempSpecies]
-	call GetCryIndex
-	ld e, c
-	ld d, b
-	call PlayCry
+	ld a, [wCurPartySpecies]
+	call PlayMonCry
 	ret
 
 .Print:

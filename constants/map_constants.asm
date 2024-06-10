@@ -154,6 +154,14 @@ ENDM
 	map_const SAFARI_ZONE_FUCHSIA_GATE_BETA,                5,  4 ; 89
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const CERULEAN_CAVE_1F,                            20, 14 ; 92
+	map_const CERULEAN_CAVE_2F,                            20, 14 ; 93
+	map_const CERULEAN_CAVE_B1F,                           20, 14 ; 94
+	map_const SEAFOAM_ISLANDS,                             15,  9 ; 95
+	map_const SEAFOAM_ISLANDS_B1F,                         15,  9 ; 96
+	map_const SEAFOAM_ISLANDS_B2F,                         15,  9 ; 97
+	map_const SEAFOAM_ISLANDS_B3F,                         17, 11 ; 98
+	map_const SEAFOAM_ISLANDS_B4F,                         15,  9 ; 99
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
@@ -184,12 +192,17 @@ ENDM
 	newgroup CINNABAR                                             ;  6
 	map_const CINNABAR_POKECENTER_1F,                       5,  4 ;  1
 	map_const CINNABAR_POKECENTER_2F_BETA,                  8,  4 ;  2
-	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  3
-	map_const SEAFOAM_GYM,                                  5,  4 ;  4
-	map_const ROUTE_19,                                    10, 18 ;  5
-	map_const ROUTE_20,                                    30,  9 ;  6
-	map_const ROUTE_21,                                    10, 18 ;  7
-	map_const CINNABAR_ISLAND,                             10,  9 ;  8
+	map_const CINNABAR_MART,                                6,  4 ;  3
+	map_const ROUTE_19_FUCHSIA_GATE,                        5,  4 ;  4
+	map_const SEAFOAM_GYM,                                  5,  4 ;  5
+	map_const ROUTE_19,                                    10, 27 ;  6
+	map_const ROUTE_20,                                    50,  9 ;  7
+	map_const ROUTE_21,                                    10, 18 ;  8
+	map_const CINNABAR_ISLAND,                             10,  9 ;  9
+	map_const POKEMON_MANSION_1F,                          15, 14 ; 10
+	map_const POKEMON_MANSION_2F,                          15, 14 ; 11
+	map_const POKEMON_MANSION_3F,                          15,  9 ; 12
+	map_const POKEMON_MANSION_B1F,                         15, 14 ; 13
 	endgroup
 
 	newgroup CERULEAN                                             ;  7

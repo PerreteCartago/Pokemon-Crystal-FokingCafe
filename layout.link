@@ -44,7 +44,6 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
-	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
@@ -112,7 +111,6 @@ ROMX $24
 	"bank24"
 ROMX $25
 	"Maps"
-	"Events"
 ROMX $26
 	"Map Scripts 11"
 ROMX $27
@@ -142,7 +140,6 @@ ROMX $32
 	"The End"
 ROMX $33
 	"Move Animations"
-	"Extra Songs 2"
 ROMX $34
 	"Pic Animations 1"
 ROMX $35
@@ -296,6 +293,8 @@ ROMX $73
 	"Pokedex Entries 129-192"
 ROMX $74
 	"Pokedex Entries 193-251"
+ROMX $75
+	"Events"
 ROMX $77
 	"Unown Font"
 	"Print Party"
@@ -306,6 +305,9 @@ ROMX $77
 ROMX $78
 	"Debug Room"
 	"Tileset Data 8"
+ROMX $79
+	"Extra Songs 1"
+	"Extra Songs 2"
 ROMX $7b
 	"Battle Tower Text"
 ROMX $7c

@@ -177,6 +177,9 @@ CeruleanPoliceSign:
 CeruleanCapeSign:
 	jumptext CeruleanCapeSignText
 
+CeruleanCaveSign:
+	jumptext CeruleanCaveSignText
+
 CeruleanLockedDoor:
 	jumptext CeruleanLockedDoorText
 
@@ -190,27 +193,27 @@ CeruleanCityHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_FOUND_BERSERK_GENE_IN_CERULEAN_CITY
 
 YouTakeThisBulbaText:
-	text "I am not a member"
-	line "of Team Rocket but"
-	cont "an undercover cop."
+	text "Sorry Kid, you"
+	line "cant go in there"
 
-	para "I arrested a vegan"
-	line "today, he tried to"
-	cont "eat this Pokemon."
+	para "Kanto goverment"
+	line "spend our taxes"
+	
+	para "in free to use"
+	line "Pokemon Centers,"
 
-	para "I need meat,"
-	line "I cant eat meat,"
-	cont "and he is a plant."
+	para "We dont even own"
+	line "a police station"
 
-	para "He said."
-	line "..."
+	para "We failed to the."
+	line "Kanto people and"
 
-	para "..."
-	line "Bloody lunatic..."
+	para "the Team Rocket"
+	line "is more dangerous"
+	cont "every day."
 
-	para "Anyway, I cant"
-	line "take care of him,"
-	cont "would you?."
+	para "We found a Pokemon"
+	line "in the crime scene"
 
 	para "Can I count on you"
 	line "to save him,"
@@ -248,20 +251,20 @@ PoliPartyFullText:
 	done
 
 PoliNoEeveeText:
-	text "I should jail you"
-	line "too. Get out"
+	text "What?"
+	line "Why?"
 	done
 
 PoliPopWontWorkText:
-	text "Hey, you really"
-	line "have to go."
+	text "Something terrible"
+	line "happened here and"
 
-	para "I am undercover"
-	line "my life is at stake."
+	para "this is a game"
+	line "for kids."
 
-	para "You are blowing"
-	line "my cover, kid…"
-	done
+	para "Please, you have"
+	line "to leave."
+	cont "Now."
 
 CeruleanCityCooltrainerMText1:
 	text "KANTO's POWER"
@@ -358,6 +361,10 @@ CeruleanGymSignText:
 	line "Mermaid"
 	done
 
+CeruleanCaveSignText:
+	text "Cerulean Cave"
+	done
+
 CeruleanBikeShopSignText:
 	text "There's a notice"
 	line "here…"
@@ -393,12 +400,13 @@ CeruleanCity_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7, 15, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
+	warp_event  9, 15, CERULEAN_GYM_BADGE_SPEECH_HOUSE, 1
 	warp_event 28, 17, CERULEAN_POLICE_STATION, 1
 	warp_event 13, 19, CERULEAN_TRADE_SPEECH_HOUSE, 1
 	warp_event 19, 21, CERULEAN_POKECENTER_1F, 1
 	warp_event 30, 23, CERULEAN_GYM, 1
 	warp_event 25, 29, CERULEAN_MART, 2
+	warp_event  4, 11, CERULEAN_CAVE_1F, 1
 
 	def_coord_events
 
@@ -410,8 +418,9 @@ CeruleanCity_MapEvents:
 	bg_event 23,  7, BGEVENT_READ, CeruleanCapeSign
 	bg_event 14, 29, BGEVENT_READ, CeruleanLockedDoor
 	bg_event 20, 21, BGEVENT_READ, CeruleanCityPokecenterSign
+	bg_event  5, 13, BGEVENT_READ, CeruleanCaveSign
 	bg_event 26, 29, BGEVENT_READ, CeruleanCityMartSign
-	bg_event  2, 12, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
+	bg_event  6, 12, BGEVENT_ITEM, CeruleanCityHiddenBerserkGene
 
 	def_object_events
 	object_event 15, 23, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerMScript, -1
@@ -419,5 +428,5 @@ CeruleanCity_MapEvents:
 	object_event 20, 24, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CeruleanCitySlowbro, -1
 	object_event 21, 24, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeruleanCityCooltrainerFScript, -1
 	object_event 30, 26, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityFisherScript, -1
-	object_event  6, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
-	object_event  9, 11, SPRITE_ROCKET, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurioScript, -1
+	object_event  8, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeruleanCityYoungsterScript, -1
+	object_event 15, 16, SPRITE_OFFICERJENNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BulbasaurioScript, -1

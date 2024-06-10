@@ -8,6 +8,13 @@ SECTION "rst8", ROM0[$0008]
 FarCall::
 	jp FarCall_hl
 
+SwapHLDE::
+	push de
+	ld d, h
+	ld e, l
+	pop hl
+	ret
+
 SECTION "rst10", ROM0[$0010]
 Bankswitch::
 	ldh [hROMBank], a

@@ -695,3 +695,16 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
+	map_attributes CeruleanCave1F, CERULEAN_CAVE_1F, $09, 0
+	map_attributes CeruleanCave2F, CERULEAN_CAVE_2F, $09, 0
+	map_attributes CeruleanCaveB1F, CERULEAN_CAVE_B1F, $09, 0
+	map_attributes SeafoamIslands, SEAFOAM_ISLANDS, $00, 0
+	map_attributes CinnabarMart, CINNABAR_MART, $00, 0
+	map_attributes SeafoamIslandsB1F, SEAFOAM_ISLANDS_B1F, $00, 0
+	map_attributes SeafoamIslandsB2F, SEAFOAM_ISLANDS_B2F, $00, 0
+	map_attributes SeafoamIslandsB3F, SEAFOAM_ISLANDS_B3F, $00, 0
+	map_attributes SeafoamIslandsB4F, SEAFOAM_ISLANDS_B4F, $00, 0
+	map_attributes PokemonMansion1F, POKEMON_MANSION_1F, $00, 0
+	map_attributes PokemonMansion2F, POKEMON_MANSION_2F, $00, 0
+	map_attributes PokemonMansion3F, POKEMON_MANSION_3F, $00, 0
+	map_attributes PokemonMansionB1F, POKEMON_MANSION_B1F, $00, 0

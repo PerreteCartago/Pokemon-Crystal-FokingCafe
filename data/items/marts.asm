@@ -35,6 +35,7 @@ Marts:
 	dw MartMtMoon
 	dw MartIndigoPlateau
 	dw MartUnderground
+	dw MartCinnabar
 	assert_table_length NUM_MARTS
 
 MartCherrygrove:
@@ -404,4 +405,15 @@ DefaultMart:
 	db 2 ; # items
 	db POKE_BALL
 	db POTION
+	db -1 ; end
+
+MartCinnabar:
+	db 7 ; # items
+	db GREAT_BALL
+	db ULTRA_BALL
+	db HYPER_POTION
+	db MAX_REPEL
+	db ESCAPE_ROPE
+	db REVIVE
+	db FULL_HEAL
 	db -1 ; end
