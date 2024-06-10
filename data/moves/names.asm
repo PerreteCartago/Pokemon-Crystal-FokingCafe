@@ -253,4 +253,5 @@ MoveNames::
 	li "Paliza"
 	li "Fuerza lunar"
 	li "Carantoña"
+	li "Granizo"
 	assert_list_length NUM_ATTACKS

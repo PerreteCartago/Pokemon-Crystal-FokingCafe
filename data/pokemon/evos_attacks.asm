@@ -1190,6 +1190,7 @@ SeelEvosAttacks:
 	db 42, HORN_DRILL
 	db 48, SAFEGUARD
 	db 50, DOUBLE_EDGE
+	db 53, HAIL
 	db 0 ; no more level-up moves
 
 DewgongEvosAttacks:
@@ -1204,6 +1205,7 @@ DewgongEvosAttacks:
 	db 53, HORN_DRILL
 	db 60, SAFEGUARD
 	db 62, DOUBLE_EDGE
+	db 65, HAIL
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -1754,6 +1756,7 @@ JynxEvosAttacks:
 	db 41, BODY_SLAM
 	db 51, PERISH_SONG
 	db 57, BLIZZARD
+	db 65, HAIL
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
@@ -2047,6 +2050,7 @@ ArticunoEvosAttacks:
 	db 49, ICE_BEAM
 	db 61, REFLECT
 	db 73, BLIZZARD
+	db 73, HAIL
 	db 0 ; no more level-up moves
 
 ZapdosEvosAttacks:
@@ -3113,6 +3117,7 @@ SwinubEvosAttacks:
 	db 37, MIST
 	db 37, EARTHQUAKE
 	db 46, BLIZZARD
+	db 52, HAIL
 	db 55, AMNESIA
 	db 0 ; no more level-up moves
 
@@ -3126,6 +3131,7 @@ PiloswineEvosAttacks:
 	db 42, MIST
 	db 42, EARTHQUAKE
 	db 56, BLIZZARD
+	db 67, HAIL
 	db 70, AMNESIA
 	db 0 ; no more level-up moves
 
@@ -3171,6 +3177,7 @@ OctilleryEvosAttacks:
 DelibirdEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PRESENT
+	db 1, HAIL
 	db 25, DRILL_PECK
 	db 0 ; no more level-up moves
 

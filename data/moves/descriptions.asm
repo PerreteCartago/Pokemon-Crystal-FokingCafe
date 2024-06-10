@@ -254,8 +254,8 @@ MoveDescriptions::
 	dw BeatUpDescription
 	dw MoonblastDescription
 	dw PlayRoughDescription
+	dw HailDescription
 	assert_table_length NUM_ATTACKS
-	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 	assert_table_length $100
@@ -1276,3 +1276,7 @@ MoonblastDescription:
 PlayRoughDescription:
 	db   "An attack that may"
 	line "lower ATACK.@"
+
+HailDescription:
+	db   "Boosts ice-type"
+	line "moves for 5 turns.@"
